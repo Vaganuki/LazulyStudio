@@ -1,7 +1,11 @@
+import '../pricing.scss';
+
+
 import type {PricingGroup} from "../../../@types/pricing";
 import {FAQ, type FAQProps} from "../FAQ.tsx";
 import {Launch} from "../Launch.tsx";
-import type {MainOffer} from "../../../@types/mainOffer";
+import {MainOffer} from "../MainOffer.tsx";
+import type {MainOffer as MainOfferType} from "../../../@types/mainOffer";
 
 export function StreamingPricing(){
 
@@ -70,7 +74,7 @@ export function StreamingPricing(){
         },
     ]
 
-    const streamingOffers : MainOffer[] = [
+    const streamingOffers : MainOfferType[] = [
         {
             title:'Pack débutant',
             price:'dès 400 €',
@@ -140,7 +144,7 @@ export function StreamingPricing(){
                 '10 emotes: 5 statiques + 5 animées',
                 '8 alertes animées',
                 '12 badges abonnés différents',
-                'offer: écran offline et mascotte'
+                'offert: écran offline et mascotte'
             ],
             headerColor: 'salmon',
         },
@@ -160,21 +164,41 @@ export function StreamingPricing(){
     return (
         <>
             <section>
-                <div>
-                    <h3>À LA CARTE</h3>
-                </div>
-                <div>
-                    {menu.map((group) => (
-                        <div key={group.title} className="test" style={{color:`var(--${group.headerColor})`}}>
-                            <span>{group.title}</span>
-                            <ul>
-                                {group.items.map(item => (
-                                    <li key={item.content}><span>{item.content}</span><span>{item.price}</span></li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+                <section className="pricing-hero">
+                    <h2 className="pricing-hero__title">TARIFS STREAMING</h2>
+                    <div className="pricing-hero__menu">
+                        <button className="pricing-hero__menu__button">Comparer les packs</button>
+                        <button className="pricing-hero__menu__button">Voir les tarifs à l'unité</button>
+                    </div>
+                </section>
+
+                <section  className="pricing-mainOffer">
+                    <h3  className="pricing-mainOffer__title">LES OFFRES</h3>
+                    <MainOffer data={streamingOffers}/>
+                    <div  className="pricing-mainOffer__attention">ATTENTION: Les tarifs varient selon la compléxité graphique, le nombre d'éléments sur mesure et le niveau d'animation.</div>
+                </section>
+                <section className="pricing-menu">
+                    <div className="pricing-menu__header">
+                        <h3>À LA CARTE</h3>
+                    </div>
+                    <div className="pricing-menu__wrapper">
+                        {menu.map((group) => (
+                            <div key={group.title} className="pricing-menu__content">
+                                <div  className="pricing-menu__content__header" style={{backgroundColor:`var(--${group.headerColor})`}}>
+                                    <h4 className="pricing-menu__content__header__title">{group.title}</h4>
+                                </div>
+                                <ul  className="pricing-mainOffer__menu__content__itemWrapper">
+                                    {group.items.map(item => (
+                                        <li className="pricing-mainOffer__menu__content__item" key={item.content}>
+                                            <span className="pricing-mainOffer__menu__content__item__desc">{item.content}</span>
+                                            <span className="pricing-mainOffer__menu__content__item__price">{item.price}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </section>
             <Launch/>
             <FAQ title={streamFAQ.title} content={streamFAQ.content} />

@@ -1,1 +1,1 @@
-export type AssetColor = 'lilac' | 'beige' | 'salmon' | 'green' | 'white' | 'yellow';
+export type AssetColor = 'lilac' | 'beige' | 'salmon' | 'green' | 'white' | 'yellow' | 'kaki';

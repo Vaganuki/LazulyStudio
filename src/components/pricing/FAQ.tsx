@@ -9,11 +9,16 @@ export function FAQ({title, content}: FAQProps) {
 
 
     return (
-        <div className={`FAQ${title ? `FAQ${title}` : ''}`}>
-            <h3>FAQ {title ? title : ''}</h3>
-            {content.map((QA , i) => (
-                <div key={i}><span>{QA.question}</span><span>{QA.answer}</span></div>
-            ))}
-        </div>
+        <section className="pricing-FAQ">
+            <h3 className="pricing-FAQ__title">FAQ {title ? title : ''}</h3>
+            <div className="pricing-FAQ__wrapper">
+                {content.map((QA , i) => (
+                    <div className="pricing-FAQ__item" key={i}>
+                        <p  className="pricing-FAQ__item__question">{QA.question}</p>
+                        <p  className="pricing-FAQ__item__answer">{QA.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
     )
 }

@@ -1,0 +1,203 @@
+//TODO: Check sizing on figma
+
+.pricing {
+  &-hero {
+    height: 60vh;
+    padding: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    &__title {
+      line-height: 1em;
+    }
+
+    &__menu {
+      display: flex;
+      gap: 1rem;
+
+      &__button:last-child {
+        color: var(--main-dark);
+        background-color: var(--white);
+      }
+    }
+  }
+
+
+  &-mainOffer {
+    padding: 2rem;
+    background-color: var(--white);
+
+    &__title {
+      font-size: 3rem;
+      font-family: var(--secondary-title-sans), sans-serif;
+    }
+
+    &__wrapper {
+      margin-bottom: 1rem;
+
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__item {
+      width: 20vw;
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+
+      padding: 1rem;
+
+      &__header {
+        border-radius: 1rem;
+        padding: .5rem;
+        margin-bottom: .5rem;
+
+        &__title {
+          font-size: 1.5rem;
+          line-height: 1em;
+          margin-bottom: .5rem;
+        }
+
+        &__price {
+          color: var(--purple);
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__content {
+      color: var(--mole);
+
+      &__data {
+        margin-bottom: .25rem;
+
+        &::before {
+          content: '✓ ';
+        }
+      }
+    }
+
+    &__attention {
+      color: var(--kaki);
+      font-weight: bold;
+      background-color: var(--yellow);
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  &-menu {
+    &__header {
+      padding: 2rem;
+      background-color: var(--lilac);
+
+      display: flex;
+      align-self: center;
+
+      h3 {
+        font-family: var(--secondary-title-sans), sans-serif;
+        color: var(--beige);
+        font-size: 3rem;
+        line-height: 1em;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+
+      padding: 2rem;
+    }
+
+    &__content {
+      width: 45vw;
+      background-color: var(--white);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+
+      &__header {
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-bottom: .5rem;
+
+        &__title {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+
+  &-launch {
+    background-color: var(--salmon);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left {
+      color: var(--white);
+      max-width: 50vw;
+    }
+
+    &__title {
+      font-size: 3rem;
+      line-height: 1em;
+      font-family: var(--secondary-title-sans), sans-serif;
+    }
+
+    &__button {
+      height: fit-content;
+      background-color: var(--lilac);
+      color: var(--main-dark);
+
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  &-FAQ{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 80vw;
+    padding: 2rem;
+    margin: 0 auto;
+
+    &__title{
+      font-size: 2rem;
+      font-family: var(--secondary-title-sans), sans-serif;
+      line-height: 1em;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    &__item {
+      border-radius: 1rem;
+      padding: .75rem;
+      background-color: var(--white);
+      &:nth-child(odd) {
+        background-color: var(--yellow);
+      }
+
+      &__question{
+        font-family: var(--secondary-title-sans), sans-serif;
+        line-height: 1em;
+        font-size: 1.2rem;
+      }
+      &__answer{
+        color: var(--mole);
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
