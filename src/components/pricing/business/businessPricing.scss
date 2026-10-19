@@ -1,0 +1,31 @@
+.business{
+  .pricing{
+    &-menu{
+      &__content{
+        &__item{
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          padding: 1rem;
+
+
+          &__desc,&__price{
+            padding: .5rem 0;
+          }
+
+          &__desc{
+            color: var(--mole);
+            border-bottom: 1px solid var(--pale-lilac);
+          }
+
+          &__price{
+            color: var(--purple);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+}
