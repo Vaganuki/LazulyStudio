@@ -17,10 +17,11 @@ export function DevMobileNav() {
         ()=> {
             const logo = logoRef.current;
             const items = gsap.utils.toArray('.dev-nav__item');
-
+            //@ts-ignore
             tl.current = gsap.timeline( {paused: true} ).fromTo(
                 items,
                 {
+                    //@ts-ignore
                     y: (i,el) => logo.offsetTop - el.offsetTop,
                 },
                 {
@@ -39,7 +40,9 @@ export function DevMobileNav() {
 
     const toggle = () => {
         const t = tl.current;
+        //@ts-ignore
         if (t.reversed() || t.progress === 0) t.play();
+        //@ts-ignore
         else t.reverse();
     }
 
