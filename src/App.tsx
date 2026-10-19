@@ -1,15 +1,14 @@
 import './App.css'
 import {Footer} from "./components/core/footer/Footer.tsx";
-import {NavBar} from "./components/core/nav-bar/NavBar.tsx";
-// import {Homepage} from "./components/homepage/Homepage.tsx";
-import {StreamingPricing} from "./components/pricing/streaming/StreamingPricing.tsx";
+import {DevNav} from "./components/core/dev-nav/DevNav.tsx";
+import {Outlet} from "react-router";
 
 function App() {
 
     return (
         <>
-            <NavBar/>
-            <StreamingPricing/>
+            <DevNav/>
+            <Outlet/>
             <Footer/>
         </>
     )
