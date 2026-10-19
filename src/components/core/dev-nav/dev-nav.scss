@@ -73,6 +73,46 @@
 }
 
 
+.mobile-nav{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  width: 12rem;
+
+  box-shadow: none;
+
+  .dev-nav{
+    &__item, &__logo {
+      background: var(--yellow);
+      border: 0.25rem solid var(--white);
+      border-radius: 1rem;
+      padding: 1rem;
+
+      color: var(--main-dark);
+      text-decoration: none;
+
+      width: 100%;
+
+      text-align: center;
+
+      font-family: var(--title-sans), sans-serif;
+    }
+    &__logo {
+      position: relative;
+      z-index: 2;
+    }
+    &__item {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+
+
 @keyframes devFloat {
   from{
     transform: translatey(-10%);
