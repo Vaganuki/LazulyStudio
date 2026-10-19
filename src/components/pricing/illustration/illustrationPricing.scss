@@ -1,0 +1,47 @@
+.illustration{
+  .pricing{
+    &-menu{
+      &__content{
+        &__item{
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          &__spacer{
+
+            display: flex;
+            justify-content: space-between;
+
+            border-bottom: 1px solid var(--pale-lilac);
+
+            padding: .5rem;
+          }
+
+          &__cont{
+            color: var(--mole);
+            font-weight: bold;
+          }
+
+          &__price{
+            color: var(--purple);
+            font-weight: bold;
+          }
+
+          &__desc{
+            color: var(--mole);
+
+            padding: .5rem;
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+
+    &-mainOffer{
+      &__attention{
+        margin: 2rem;
+      }
+    }
+  }
+
+}
