@@ -1,5 +1,5 @@
 import '../pricing.scss';
-
+import './streamingPricing.scss'
 
 import type {PricingGroup} from "../../../@types/pricing";
 import {FAQ, type FAQProps} from "../FAQ.tsx";
@@ -163,7 +163,7 @@ export function StreamingPricing(){
 
     return (
         <>
-            <section>
+            <section className="streaming">
                 <section className="pricing-hero">
                     <h2 className="pricing-hero__title">TARIFS STREAMING</h2>
                     <div className="pricing-hero__menu">
@@ -187,11 +187,11 @@ export function StreamingPricing(){
                                 <div  className="pricing-menu__content__header" style={{backgroundColor:`var(--${group.headerColor})`}}>
                                     <h4 className="pricing-menu__content__header__title">{group.title}</h4>
                                 </div>
-                                <ul  className="pricing-mainOffer__menu__content__itemWrapper">
+                                <ul  className="pricing-menu__content__itemWrapper">
                                     {group.items.map(item => (
-                                        <li className="pricing-mainOffer__menu__content__item" key={item.content}>
-                                            <span className="pricing-mainOffer__menu__content__item__desc">{item.content}</span>
-                                            <span className="pricing-mainOffer__menu__content__item__price">{item.price}</span>
+                                        <li className="pricing-menu__content__item" key={item.content}>
+                                            <span className="pricing-menu__content__item__desc">{item.content}</span>
+                                            <span className="pricing-menu__content__item__price">{item.price}</span>
                                         </li>
                                     ))}
                                 </ul>

@@ -1,0 +1,27 @@
+.streaming{
+  .pricing{
+    &-menu{
+      &__content{
+        &__item{
+          display: flex;
+          justify-content: space-between;
+
+          padding: 1rem;
+
+
+          &:not(:last-child){
+            border-bottom: 1px solid var(--pale-lilac);
+          }
+          &__desc{
+            color: var(--mole);
+          }
+
+          &__price{
+            color: var(--purple);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
