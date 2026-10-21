@@ -80,13 +80,9 @@ h1{
 }
 h2{
   font-family: var(--secondary-title-sans), sans-serif;
-  font-size: 3rem;
+  font-size: 2.25rem;
 }
-.dev{
-  width: fit-content;
-  margin: 0 auto;
-  box-shadow: var(--shadow);
-}
+
 button{
   background-color: var(--main-dark);
   color: var(--white);
@@ -114,4 +110,10 @@ a{
   padding: .5rem 1rem;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) {
+  h2{
+    font-size: 3rem;
+  }
 }
