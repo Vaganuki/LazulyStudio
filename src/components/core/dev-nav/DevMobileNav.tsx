@@ -10,19 +10,19 @@ gsap.registerPlugin(useGSAP);
 export function DevMobileNav() {
 
     const root = useRef(null);
-    const logoRef = useRef(null);
-    const tl = useRef(null);
+    const logoRef = useRef<HTMLButtonElement | null>(null);
+    const tl = useRef<gsap.core.Timeline|null>(null);
 
     useGSAP(
         ()=> {
             const logo = logoRef.current;
             const items = gsap.utils.toArray('.dev-nav__item');
-            //@ts-ignore
+
+            if(!logo) return;
             tl.current = gsap.timeline( {paused: true} ).fromTo(
                 items,
                 {
-                    //@ts-ignore
-                    y: (i,el) => logo.offsetTop - el.offsetTop,
+                    y: (_,el) => logo.offsetTop - el.offsetTop,
                 },
                 {
                     y: 0,
@@ -38,12 +38,11 @@ export function DevMobileNav() {
         {scope: root}
     );
 
-    const toggle = () => {
+    const toggle = async ()  => {
         const t = tl.current;
-        //@ts-ignore
-        if (t.reversed() || t.progress === 0) t.play();
-        //@ts-ignore
-        else t.reverse();
+        if(!t) return;
+        if(t.reversed() || !t.progress() ) await t.play();
+        else await t.reverse();
     }
 
     return (
