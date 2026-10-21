@@ -52,26 +52,31 @@
 
 }
 
-@media screen and (min-width: 576px) {
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 85dvh;
+    padding: 3rem;
+
+    align-items: start;
+
+    &__cartouche {
+      font-size: 0.75rem;
+    }
+    &__title {
+      font-size: 4rem;
+      line-height: 3.5rem;
+
+    }
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
 }
 
-
-/*
-TODO: This code is from dev; Will be used for min-width : 1200xp
-
-.hero {
-  height: 85vh;
-  padding: 4rem;
-  &__cartouche {
-    font-size: 0.75rem;
-  }
-  &__title {
-    font-size: 4rem;
-    line-height: 3.5rem;
-
-  }
-  &__subtitle {
-    font-size: 1rem;
+@media screen and (min-width: 992px) {
+  .hero {
+    height: 85vh;
+    padding: 4rem;
   }
 }
-*/
