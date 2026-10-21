@@ -1,9 +1,8 @@
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
-  height: 10rem;
+  height: 15rem;
   background-color: var(--main-dark);
 
   padding: 1rem;
@@ -14,6 +13,7 @@ footer {
 
       &__list-wrapper {
         display: flex;
+        justify-content: center;
         gap: 1rem;
       }
 
@@ -30,7 +30,10 @@ footer {
     &__secondary {
       &__list-wrapper {
         display: flex;
-        gap: .25rem;
+        flex-wrap: wrap;
+        gap: .75rem;
+
+        justify-content: center;
       }
       &__item {
         color: var(--lilac);
@@ -43,6 +46,35 @@ footer {
           }
         }
 
+      }
+    }
+  }
+
+}
+
+/*
+TODO: This code is from dev; Will be used for min-width : 1200xp
+footer {
+  justify-content: center;
+  gap: 1rem;
+  height: 10rem;
+
+  .footer {
+    &__main {
+
+      &__list-wrapper {
+        display: flex;
+        justify-content: left;
+        gap: 1rem;
+      }
+    }
+
+    &__secondary {
+      &__list-wrapper {
+        gap: .25rem;
+      }
+      &__item {
+
         &:not(:last-child)::after {
           content: '•';
           margin-left: 0.25rem;
@@ -52,3 +84,4 @@ footer {
   }
 
 }
+*/
