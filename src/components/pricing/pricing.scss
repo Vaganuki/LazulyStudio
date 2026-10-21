@@ -1,9 +1,7 @@
-//TODO: Check sizing on figma
-
 .pricing {
   &-hero {
-    height: 60vh;
-    padding: 4rem;
+    height: 60dvh;
+    padding: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -12,10 +10,12 @@
 
     &__title {
       line-height: 1em;
+      text-align: center;
     }
 
     &__menu {
       display: flex;
+      justify-content: center;
       gap: 1rem;
 
       &__button:last-child {
@@ -27,11 +27,11 @@
 
 
   &-mainOffer {
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--white);
 
     &__title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-family: var(--secondary-title-sans), sans-serif;
     }
 
@@ -39,13 +39,13 @@
       margin-bottom: 1rem;
 
       display: flex;
+      flex-direction: column;
       gap: .5rem;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     &__item {
-      width: 20vw;
       border-radius: 1rem;
       box-shadow: var(--shadow);
 
@@ -57,7 +57,7 @@
         margin-bottom: .5rem;
 
         &__title {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           line-height: 1em;
           margin-bottom: .5rem;
         }
@@ -92,16 +92,15 @@
 
   &-menu {
     &__header {
-      padding: 2rem;
+      padding: 1.5rem;
       background-color: var(--lilac);
 
-      display: flex;
-      align-self: center;
+      text-align: center;
 
       h3 {
         font-family: var(--secondary-title-sans), sans-serif;
         color: var(--beige);
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: 1em;
       }
     }
@@ -112,14 +111,14 @@
       gap: 1rem;
       justify-content: center;
 
-      padding: 2rem;
+      padding: 1rem;
     }
 
     &__content {
-      width: 45vw;
+      width: 100%;
       background-color: var(--white);
       border-radius: 1rem;
-      padding: 1rem;
+      padding: .75rem;
       box-shadow: var(--shadow);
 
       &__header {
@@ -128,7 +127,7 @@
         margin-bottom: .5rem;
 
         &__title {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
       }
     }
@@ -137,24 +136,24 @@
 
   &-launch {
     background-color: var(--salmon);
-    padding: 3rem;
+    padding: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
 
     &__left {
       color: var(--white);
-      max-width: 50vw;
     }
 
     &__title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1em;
       font-family: var(--secondary-title-sans), sans-serif;
     }
 
     &__button {
-      height: fit-content;
+      width: fit-content;
+      margin: 0 auto;
       background-color: var(--lilac);
       color: var(--main-dark);
 
@@ -167,19 +166,18 @@
     flex-direction: column;
     gap: 1rem;
 
-    width: 80vw;
-    padding: 2rem;
+    padding: 1rem;
     margin: 0 auto;
 
     &__title{
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-family: var(--secondary-title-sans), sans-serif;
       line-height: 1em;
     }
     &__wrapper {
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: 1rem;
     }
     &__item {
       border-radius: 1rem;
@@ -192,7 +190,7 @@
       &__question{
         font-family: var(--secondary-title-sans), sans-serif;
         line-height: 1em;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       &__answer{
         color: var(--mole);
@@ -201,3 +199,122 @@
     }
   }
 }
+
+/*
+TODO: This code is from dev; Will be used for min-width : 1200xp
+TODO: Check sizing on figma
+
+.pricing {
+  &-hero {
+    padding: 4rem;
+
+    &__title {
+      text-align: left;
+    }
+  }
+
+
+  &-mainOffer {
+    padding: 2rem;
+
+    &__title {
+      font-size: 3rem;
+      font-family: var(--secondary-title-sans), sans-serif;
+    }
+
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__item {
+      width: 20vw;
+
+      padding: 1rem;
+
+      &__header {
+        &__title {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &-menu {
+    &__header {
+      padding: 2rem;
+
+      text-align: left;
+
+      h3 {
+        font-size: 3rem;
+      }
+    }
+
+    &__wrapper {
+      padding: 2rem;
+    }
+
+    &__content {
+      width: 45vw;
+      padding: 1rem;
+
+      &__header {
+        border-radius: 1rem;
+
+        &__title {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+
+  &-launch {
+    padding: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap 0;
+    &__left {
+      max-width: 50vw;
+    }
+
+    &__title {
+      font-size: 3rem;
+      line-height: 1em;
+    }
+
+    &__button {
+      height: fit-content;
+      margin: 0;
+    }
+  }
+
+  &-FAQ{
+
+    width: 80vw;
+    padding: 2rem;
+
+    &__title{
+      font-size: 2rem;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    &__item {
+      border-radius: 1rem;
+
+      &__question{
+        font-size: 1.2rem;
+      }
+      &__answer{
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+*/
