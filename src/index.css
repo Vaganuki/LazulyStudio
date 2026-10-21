@@ -24,6 +24,9 @@
   --bg: var(--beige);
   --shadow: 0 .25rem .01rem rgba(39, 34, 49, .25);
   --shadow-diffused: 0 .25rem .25rem rgba(39, 34, 49, .25);
+
+  --phone-width: 576px;
+
   /*TODO: may be needed idk, we'll see later*/
   /*
   --text-h: #08060d;
@@ -38,7 +41,15 @@
   --mono: ui-monospace, Consolas, monospace;
   */
 
-
+  /*
+    MEDIA SCREEN BREAKS :
+    small mobile : max 576px
+    mobile : min 576px
+    tablet: min 768px
+    small desktop: min 992px
+    desktop: min 1200px
+    big screen : min 1400 px
+  */
 
 
   color: var(--text);
@@ -80,7 +91,7 @@ button{
   background-color: var(--main-dark);
   color: var(--white);
   border-radius: 1.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   border: none;
 
