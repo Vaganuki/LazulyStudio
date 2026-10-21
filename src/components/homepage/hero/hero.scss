@@ -1,52 +1,79 @@
-.hero {
-  height: 85vh;
-  padding: 4rem;
+/* CODING FOR SMALL PHONES FIRST */
+.hero{
+  height: 85dvh;
+  padding: 2rem;
+
+  text-align: center;
+  align-items: center;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
 
-  &__cartouche {
-    width: fit-content;
+  background-color: red;
+
+  &__cartouche{
     background-color: var(--yellow);
     color: var(--main-dark);
     border: 0.125rem solid var(--title-border);
-    font-size: 0.75rem;
+    font-size: 0.6rem;
   }
 
   &__title {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 3.5rem;
+    line-height: 2.5rem;
 
     position: relative;
     z-index: 1;
 
     &::after {
       content: attr(data-text);
+      width: 100%;
+
       position: absolute;
-      left: 0;
-      top: 0;
+      inset: 0;
       z-index: -1;
 
-      font-size: 4rem;
-      line-height: 3.5rem;
+      font-size: inherit;
+      line-height: inherit;
 
       -webkit-text-stroke: 0.5rem var(--title-border);
     }
   }
-
   &__subtitle {
     font-family: var(--title-sans), sans-serif;
+    font-size: 0.9rem;
   }
-
   &__button {
     &__wrapper {
       display: flex;
       gap: 1rem;
     }
+  }
 
-    //font-weight: normal;
-    padding: 0.5rem 1rem;
+}
+
+@media screen and (min-width: 576px) {
+}
+
+
+/*
+TODO: This code is from dev; Will be used for min-width : 1200xp
+
+.hero {
+  height: 85vh;
+  padding: 4rem;
+  &__cartouche {
+    font-size: 0.75rem;
+  }
+  &__title {
+    font-size: 4rem;
+    line-height: 3.5rem;
+
+  }
+  &__subtitle {
+    font-size: 1rem;
   }
 }
+*/
