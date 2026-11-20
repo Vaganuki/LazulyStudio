@@ -27,6 +27,13 @@
 
   --phone-width: 576px;
 
+  /* LAYOUT (4px grid => every spacing is a multiple of .25rem) */
+  --gutter: 1rem;                 /* horizontal breathing space of every section, grows with the screen */
+  --content-max-width: 75rem;     /* 1200px: content stops growing on big screens, backgrounds stay full width */
+  --section-padding-inline: max(var(--gutter), calc((100% - var(--content-max-width)) / 2));
+  --tap-target: 2.75rem;          /* 44px: minimum size of anything clickable (WCAG / Apple HIG) */
+  --mobile-nav-space: 8rem;       /* room kept at the bottom of the page for the fixed mobile nav */
+
   /*TODO: may be needed idk, we'll see later*/
   /*
   --text-h: #08060d;
@@ -42,7 +49,7 @@
   */
 
   /*
-    MEDIA SCREEN BREAKS :
+    MEDIA SCREEN BREAKS (SCSS mixin: src/styles/_breakpoints.scss, keep both in sync) :
     small mobile : max 576px
     mobile : min 576px
     tablet: min 768px
@@ -83,7 +90,14 @@ h2{
   font-size: 2.25rem;
 }
 
+img{
+  display: block;
+  max-width: 100%;
+}
+
 button{
+  min-height: var(--tap-target);
+  cursor: pointer;
   background-color: var(--main-dark);
   color: var(--white);
   border-radius: 1.5rem;
@@ -110,6 +124,19 @@ a{
   padding: .5rem 1rem;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  :root{
+    --gutter: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  :root{
+    --gutter: 3rem;
+    --mobile-nav-space: 0rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {

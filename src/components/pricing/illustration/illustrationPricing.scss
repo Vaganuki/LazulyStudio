@@ -11,6 +11,8 @@
 
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
 
             border-bottom: 1px solid var(--pale-lilac);
 
@@ -25,6 +27,7 @@
           &__price{
             color: var(--purple);
             font-weight: bold;
+            white-space: nowrap;
           }
 
           &__desc{
@@ -39,7 +42,7 @@
 
     &-mainOffer{
       &__attention{
-        margin: 2rem;
+        margin: 1rem var(--section-padding-inline) 2rem;
       }
     }
   }

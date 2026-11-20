@@ -1,6 +1,8 @@
+@use '../../../styles/breakpoints' as *;
+
 /* CODING FOR SMALL PHONES FIRST */
 .hero{
-  height: 85dvh;
+  min-height: 85dvh; /* min-height: content can grow (landscape phones) instead of overflowing */
   padding: 2rem;
 
   text-align: center;
@@ -46,6 +48,8 @@
   &__button {
     &__wrapper {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1rem;
     }
   }
@@ -53,9 +57,8 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@include media(md) {
   .hero {
-    height: 85dvh;
     padding: 3rem;
 
     align-items: start;
@@ -71,12 +74,16 @@
     &__subtitle {
       font-size: 1rem;
     }
+    &__button {
+      &__wrapper {
+        justify-content: start;
+      }
+    }
   }
 }
 
-@media screen and (min-width: 992px) {
+@include media(lg) {
   .hero {
-    height: 85vh;
     padding: 4rem;
   }
 }

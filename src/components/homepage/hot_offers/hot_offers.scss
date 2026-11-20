@@ -1,23 +1,31 @@
+@use '../../../styles/breakpoints' as *;
+
+/* CODING FOR SMALL PHONES FIRST */
 .offers-section {
 
   background-color: var(--lilac);
 
-  padding: 1rem;
+  padding: 1rem var(--section-padding-inline);
 
   h2{
     color: var(--beige);
+    margin-bottom: .75rem;
   }
 
   .offers-container {
 
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    align-items: center;
 
     .offer{
 
       &__wrapper{
+        /* grows from 18rem up to 24rem: 1 card per row on phones, side by side as soon as there is room */
+        flex: 1 1 18rem;
+        max-width: 24rem;
+
         padding: 1rem;
         background-color: var(--white);
         border-radius: 1rem;
@@ -35,6 +43,7 @@
         img{
           object-fit: cover;
           width: 100%;
+          height: 100%;
         }
       }
 
@@ -45,7 +54,10 @@
 
       &__header{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        align-items: baseline;
+        gap: .25rem 1rem;
 
         h3{
           font-family: var(--secondary-title-sans), sans-serif;
@@ -56,6 +68,7 @@
       &__price{
         color: var(--purple);
         font-weight: bold;
+        white-space: nowrap;
       }
       &__desc{
         font-size: 0.75rem;
@@ -95,27 +108,38 @@
 }
 
 
-/*
-TODO: This code is from dev; Will be used for min-width : 1200xp
+@include media(md) {
+  .offers-section {
+    padding-block: 2rem;
 
-.offers-section {
-  padding: 1rem 2.5rem;
+    h2{
+      margin-bottom: 1rem;
+    }
 
-  .offers-container {
-    .offer{
+    .offers-contact{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-      &__wrapper{
-        width: 20vw;
-      }
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
 
-      &__category{
-        font-size: .75rem;
-      }
-
-      &__timing{
-        font-size: 0.6rem;
+      &__button{
+        flex-shrink: 0;
+        margin: 0;
       }
     }
   }
 }
-*/
+
+@include media(xl) {
+  .offers-section {
+    .offers-container {
+      .offer{
+        &__category{
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}

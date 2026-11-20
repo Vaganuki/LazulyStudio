@@ -1,0 +1,34 @@
+@use 'sass:map';
+
+/*
+  MEDIA SCREEN BREAKS (mobile first => min-width)
+  Single source of truth: keep the list in index.css in sync if you change a value.
+
+    base (small mobile) : < 576px  -> no media query, write it at the top of the file
+    sm  (mobile)        : min 576px
+    md  (tablet)        : min 768px
+    lg  (small desktop) : min 992px   -> desktop nav replaces the mobile nav
+    xl  (desktop)       : min 1200px
+    xxl (big screen)    : min 1400px
+
+  Usage :
+    @use '../../../styles/breakpoints' as *;
+    @include media(md) { .my-block { ... } }
+*/
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin media($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Unknown breakpoint `#{$name}`. Available: #{map.keys($breakpoints)}";
+  }
+
+  @media screen and (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}

@@ -1,11 +1,15 @@
+@use '../../../styles/breakpoints' as *;
+
+/* CODING FOR SMALL PHONES FIRST */
 footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 15rem;
   background-color: var(--main-dark);
 
-  padding: 1rem;
+  padding: 2rem var(--section-padding-inline);
+  /* keeps the last links visible above the fixed mobile nav (0 on desktop, see index.css) */
+  padding-bottom: calc(2rem + var(--mobile-nav-space) + env(safe-area-inset-bottom));
 
   .footer {
     &__main {
@@ -13,12 +17,17 @@ footer {
 
       &__list-wrapper {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: .5rem 1rem;
       }
 
       &__item {
         a {
+          display: inline-flex;
+          align-items: center;
+          min-height: var(--tap-target);
+
           color: var(--white);
           &:hover{
             color: var(--purple);
@@ -52,36 +61,31 @@ footer {
 
 }
 
-/*
-TODO: This code is from dev; Will be used for min-width : 1200xp
-footer {
-  justify-content: center;
-  gap: 1rem;
-  height: 10rem;
 
-  .footer {
-    &__main {
+@include media(lg) {
+  footer {
+    justify-content: center;
 
-      &__list-wrapper {
-        display: flex;
-        justify-content: left;
-        gap: 1rem;
+    .footer {
+      &__main {
+        &__list-wrapper {
+          justify-content: start;
+        }
       }
-    }
 
-    &__secondary {
-      &__list-wrapper {
-        gap: .25rem;
-      }
-      &__item {
+      &__secondary {
+        &__list-wrapper {
+          justify-content: start;
+          gap: .25rem;
+        }
+        &__item {
 
-        &:not(:last-child)::after {
-          content: '•';
-          margin-left: 0.25rem;
+          &:not(:last-child)::after {
+            content: '•';
+            margin-left: 0.25rem;
+          }
         }
       }
     }
   }
-
 }
-*/

@@ -1,4 +1,11 @@
+@use '../../../styles/breakpoints' as *;
+
+/* CODING FOR SMALL PHONES FIRST */
+
+/* DESKTOP NAV: hidden on mobile, shown from "lg" (see bottom of file) */
 .dev-nav{
+  display: none;
+
   position: sticky;
   top: 1rem;
   z-index: 9999;
@@ -9,7 +16,7 @@
 
   padding: 1rem 4rem;
 
-  width: 90vw;
+  width: min(90%, var(--content-max-width));
   margin: 0 auto;
 
   -webkit-user-select: none;
@@ -18,6 +25,7 @@
 
   box-shadow: 0 .25rem .5rem lightgray;
 
+  /* TODO: CSS animation on "transform": remove it before animating .dev-nav with GSAP (they would fight) */
   animation: devFloat 2s infinite alternate ease-in-out;
 
   &::before{
@@ -39,10 +47,14 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem 2rem;
   }
 
   &__item{
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-target);
+
     font-family: var(--title-sans), sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
@@ -73,11 +85,14 @@
 }
 
 
+/* MOBILE NAV: fixed at the bottom, hidden from "lg" */
 .mobile-nav{
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: calc(2rem + env(safe-area-inset-bottom));
+  /* centered with inset + margin (not transform) so GSAP can freely animate x / y on it */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 
   z-index: 9999;
   display: flex;
@@ -87,8 +102,13 @@
 
   box-shadow: none;
 
+  /* the nav box is as tall as the open menu: let clicks go through it when the menu is closed */
+  pointer-events: none;
+
   .dev-nav{
     &__item, &__logo {
+      pointer-events: auto;
+
       background: var(--yellow);
       border: 0.25rem solid var(--white);
       border-radius: 1rem;
@@ -98,6 +118,7 @@
       text-decoration: none;
 
       width: 100%;
+      min-height: var(--tap-target);
 
       text-align: center;
 
@@ -110,6 +131,10 @@
     &__item {
       position: relative;
       z-index: 1;
+
+      &[aria-hidden="true"]{
+        pointer-events: none;
+      }
     }
   }
 }
@@ -125,4 +150,14 @@
   }
 
 
+}
+
+
+@include media(lg) {
+  .dev-nav{
+    display: block;
+  }
+  .mobile-nav{
+    display: none;
+  }
 }

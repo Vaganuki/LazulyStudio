@@ -1,13 +1,17 @@
+@use '../../../styles/breakpoints' as *;
+
+/* CODING FOR SMALL PHONES FIRST */
 .trusted {
-  padding: 1rem;
+  padding: 1rem var(--section-padding-inline);
   h2{
     line-height: 1em;
     margin-bottom: .75rem;
   }
 
   &__container {
-    display: flex;
-    flex-direction: column;
+    /* 1 column on phones, as many 14rem+ columns as the screen allows after that */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
     gap: 1rem;
   }
 
@@ -36,29 +40,26 @@
 
 }
 
-/*
-TODO: This code is from dev; Will be used for min-width : 1200xp
 
-.trusted {
-  padding: 1rem 2.5rem;
-  h2{
-    margin-bottom: 1rem;
-  }
-
-  &__container {
-    width: 90%;
-    margin: 0 auto;
-
-  }
-
-  &__item{
-    &__category{
-      font-size: 0.75rem;
-    }
-
-    &__title{
-      font-size: 2rem;
+@include media(md) {
+  .trusted {
+    padding-block: 2rem;
+    h2{
+      margin-bottom: 1rem;
     }
   }
 }
-*/
+
+@include media(xl) {
+  .trusted {
+    &__item{
+      &__category{
+        font-size: 0.75rem;
+      }
+
+      &__title{
+        font-size: 2rem;
+      }
+    }
+  }
+}

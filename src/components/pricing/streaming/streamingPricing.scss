@@ -5,6 +5,8 @@
         &__item{
           display: flex;
           justify-content: space-between;
+          align-items: baseline;
+          gap: 1rem;
 
           padding: 1rem;
 
@@ -19,6 +21,7 @@
           &__price{
             color: var(--purple);
             font-weight: bold;
+            white-space: nowrap;
           }
         }
       }
