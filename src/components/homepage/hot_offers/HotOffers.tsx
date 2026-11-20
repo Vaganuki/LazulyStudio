@@ -1,46 +1,12 @@
 import './hot_offers.scss';
-import type {AssetColor} from "../../../@types/colors";
-
-interface Offers {
-    category: string;
-    color: AssetColor;
-    name: string;
-    price: number;
-    description: string;
-
-    duration: string;
-    pic: string;
-
-}
+import {hotOffers} from "../../../data/homepage.ts";
 
 export function HotOffers() {
-    const offers: Offers[] = [
-        {
-            category: 'Streaming',
-            color: "lilac",
-            name: 'Pack pro',
-            price: 820,
-            description: '4 scènes overlay  • bannière • photo profil • 8 emotes • 6 alertes et bien plus',
-            duration: '3-4 semaines',
-            pic: ''
-        },
-        {
-            category: 'business',
-            color: "salmon",
-            name: 'Identité visuelle',
-            price: 800,
-            description: 'Logo principal + variantes • Palette & typographies • guide d’utilisation',
-            duration: '4–5 semaines • 2 séries de révisions',
-            pic: ''
-        },
-    ];
-
-
     return (
         <section className="offers-section">
             <h2>OFFRES À LA UNE</h2>
             <div className="offers-container">
-                {offers.map((o) => (
+                {hotOffers.map((o) => (
                     <div className="offer__wrapper" key={o.name}>
                         <div className="offer__pic">
                             <img
