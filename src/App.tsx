@@ -1,13 +1,13 @@
 import './App.css'
 import {Footer} from "./components/core/footer/Footer.tsx";
-import {DevNavigation} from "./components/core/dev-navigation/DevNavigation.tsx";
+import {NavBar} from "./components/core/nav-bar/NavBar.tsx";
 import {Outlet} from "react-router";
 
 function App() {
 
     return (
         <>
-            <DevNavigation/>
+            <NavBar/>
             <Outlet/>
             <Footer/>
         </>

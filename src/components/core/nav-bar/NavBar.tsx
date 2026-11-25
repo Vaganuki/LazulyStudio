@@ -1,14 +1,13 @@
-import './nav-bar.scss'
+import './nav-bar.scss';
+import {MobileNav} from "./MobileNav.tsx";
+import {DesktopNav} from "./DesktopNav.tsx";
 
+// Both navs are always rendered: the CSS ("lg" breakpoint) decides which one is visible
 export function NavBar() {
     return (
-        <nav className="nav-bar">
-            <h1>Lazuly Studio</h1>
-            <ul className="nav__menu">
-                <li className="nav__item"><a href="">Portfolio</a></li>
-                <li className="nav__item"><a href="">À propos</a></li>
-                <li className="nav__item"><a href="">Contact</a></li>
-            </ul>
-        </nav>
+        <>
+            <MobileNav/>
+            <DesktopNav/>
+        </>
     )
 }

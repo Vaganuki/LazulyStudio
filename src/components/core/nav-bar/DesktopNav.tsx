@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP);
 // Must match the "lg" breakpoint of src/styles/_breakpoints.scss (desktop nav takes over from 992px)
 const DESKTOP_QUERY = '(min-width: 992px)';
 
-export function DevDesktopNav() {
+export function DesktopNav() {
 
     const root = useRef<HTMLElement | null>(null);
     const tl = useRef<gsap.core.Timeline|null>(null);

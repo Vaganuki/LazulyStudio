@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP);
 // Must match the "lg" breakpoint of src/styles/_breakpoints.scss (desktop nav takes over from 992px)
 const MOBILE_QUERY = '(max-width: 991.98px)';
 
-export function DevMobileNav() {
+export function MobileNav() {
 
     const root = useRef(null);
     const logoRef = useRef<HTMLButtonElement | null>(null);
