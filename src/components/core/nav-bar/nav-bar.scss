@@ -56,9 +56,12 @@
 
 /* DESKTOP NAV: hidden on mobile, shown from "lg" */
 .desktop-nav{
-  padding: 1.5rem var(--section-padding-inline) .75rem;
+  /* tall enough for the links sliding out under the title */
+  min-height: 8rem;
+  padding: 0 var(--section-padding-inline);
 
   display: none;
+  /* see "lg" at the bottom: flex + align-items center keeps the title vertically centered */
 
   position: sticky;
   top: 0;
@@ -68,6 +71,10 @@
 
   -webkit-user-select: none;
   user-select: none;
+
+  &__brand{
+    position: relative;
+  }
 
   &__logo{
     display: inline-block;
@@ -84,11 +91,18 @@
   }
 
   &__wrapper{
+    width: max-content;
+
     /* clips the links while they are hidden "inside" the title */
     overflow: hidden;
 
     display: flex;
     gap: 1rem;
+
+    /* out of the flow, right under the title: the hidden links don't push the title up */
+    position: absolute;
+    top: 100%;
+    left: 0;
   }
 
   &__item{
@@ -108,7 +122,8 @@
 
 @include media(lg) {
   .desktop-nav{
-    display: block;
+    display: flex;
+    align-items: center;
   }
   .mobile-nav{
     display: none;

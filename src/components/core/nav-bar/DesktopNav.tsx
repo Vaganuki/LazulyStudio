@@ -60,13 +60,14 @@ export function DesktopNav() {
 
     return (
         <nav className="desktop-nav" ref={root} aria-label="Navigation principale" onMouseEnter={open} onMouseLeave={close} onFocus={open} onBlur={handleBlur}>
-            <Link to={ROUTES.HOME} className="desktop-nav__logo">LAZULYSTUDIO</Link>
-            <ul className="desktop-nav__wrapper">
-                <li><Link to={ROUTES.HOME} className="desktop-nav__item">Home</Link></li>
-                <li><Link to={ROUTES.STREAMING} className="desktop-nav__item">Streaming</Link></li>
-                <li><Link to={ROUTES.BUSINESS} className="desktop-nav__item">Business</Link></li>
-                <li><Link to={ROUTES.ILLUSTRATION} className="desktop-nav__item">Illustration</Link></li>
-            </ul>
+            <div className="desktop-nav__brand">
+                <Link to={ROUTES.HOME} className="desktop-nav__logo">LAZULYSTUDIO</Link>
+                <ul className="desktop-nav__wrapper">
+                    <li><Link to={ROUTES.STREAMING} className="desktop-nav__item">Streaming</Link></li>
+                    <li><Link to={ROUTES.BUSINESS} className="desktop-nav__item">Business</Link></li>
+                    <li><Link to={ROUTES.ILLUSTRATION} className="desktop-nav__item">Illustration</Link></li>
+                </ul>
+            </div>
         </nav>
     )
 }
