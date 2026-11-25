@@ -10,7 +10,7 @@ export function HotOffers() {
                     <div className="offer__wrapper" key={o.name}>
                         <div className="offer__pic">
                             <img
-                                src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9rNNsfKv4R7ouswYscedgwwALNdxmCXJ1ZaDYsbuRNX8ZcJ4-y2T1Xo&s=10`}
+                                src={o.pic}
                                 alt={`Exemple de ${o.name}`}/>
                         </div>
                         <div className="offer__category cartouche"

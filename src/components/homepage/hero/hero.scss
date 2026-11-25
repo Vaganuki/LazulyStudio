@@ -13,6 +13,14 @@
   justify-content: center;
   gap: 1rem;
 
+  /* beige veil over the illustration so the title stays readable (same rgb as --beige) */
+  background-image:
+    linear-gradient(rgba(255, 248, 239, .7), rgba(255, 248, 239, .7)),
+    url('/visuels/maenyl-4-hero.jpg');
+  background-size: cover;
+  /* anchored at the bottom: the illustration's own title (top of the picture) stays out of the frame */
+  background-position: center bottom;
+
   &__cartouche{
     background-color: var(--yellow);
     color: var(--main-dark);

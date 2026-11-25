@@ -1,15 +1,13 @@
 import './App.css'
 import {Footer} from "./components/core/footer/Footer.tsx";
-import {DevNav} from "./components/core/dev-nav/DevNav.tsx";
+import {DevNavigation} from "./components/core/dev-navigation/DevNavigation.tsx";
 import {Outlet} from "react-router";
-import {DevMobileNav} from "./components/core/dev-nav/DevMobileNav.tsx";
 
 function App() {
 
     return (
         <>
-            <DevMobileNav/>
-            <DevNav/>
+            <DevNavigation/>
             <Outlet/>
             <Footer/>
         </>

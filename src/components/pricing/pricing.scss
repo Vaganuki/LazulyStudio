@@ -11,6 +11,13 @@
     justify-content: center;
     gap: 1rem;
 
+    /* same beige veil as the homepage hero; each page sets its own picture with --pricing-hero-image */
+    background-image:
+      linear-gradient(rgba(255, 248, 239, .7), rgba(255, 248, 239, .7)),
+      var(--pricing-hero-image, none);
+    background-size: cover;
+    background-position: center bottom;
+
     &__title {
       line-height: 1em;
       text-align: center;

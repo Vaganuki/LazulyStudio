@@ -1,4 +1,3 @@
-import './dev-nav.scss';
 import {Link} from "react-router";
 import {ROUTES} from "../../../router.tsx";
 import {useRef, useState} from "react";
@@ -24,7 +23,7 @@ export function DevMobileNav() {
 
             mm.add(MOBILE_QUERY, () => {
                 const logo = logoRef.current;
-                const items = gsap.utils.toArray<HTMLElement>('.dev-nav__item');
+                const items = gsap.utils.toArray<HTMLElement>('.mobile-nav__item');
 
                 if(!logo) return;
                 tl.current = gsap.timeline( {paused: true} ).fromTo(
@@ -73,19 +72,19 @@ export function DevMobileNav() {
 
     // Hidden links (stacked behind the logo) must not be reachable with the keyboard / screen readers
     const itemProps = {
-        className: 'dev-nav__item',
+        className: 'mobile-nav__item',
         tabIndex: isOpen ? 0 : -1,
         'aria-hidden': !isOpen,
         onClick: close,
     };
 
     return (
-        <nav className="dev mobile-nav" ref={root} aria-label="Navigation principale">
+        <nav className="mobile-nav" ref={root} aria-label="Navigation principale">
             <Link to={ROUTES.HOME} {...itemProps}>HOME</Link>
             <Link to={ROUTES.STREAMING} {...itemProps}>STREAMING</Link>
             <Link to={ROUTES.BUSINESS} {...itemProps}>BUSINESS</Link>
             <Link to={ROUTES.ILLUSTRATION} {...itemProps}>ILLUSTRATION</Link>
-            <button className="dev-nav__logo" ref={logoRef} onClick={toggle} aria-expanded={isOpen}>LAZULY<br/>STUDIO</button>
+            <button className="mobile-nav__logo" ref={logoRef} onClick={toggle} aria-expanded={isOpen}>LAZULY<br/>STUDIO</button>
         </nav>
     )
 }

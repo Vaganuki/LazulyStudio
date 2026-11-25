@@ -8,7 +8,7 @@ export const hotOffers: HotOffer[] = [
         price: 820,
         description: '4 scènes overlay  • bannière • photo profil • 8 emotes • 6 alertes et bien plus',
         duration: '3-4 semaines',
-        pic: ''
+        pic: '/visuels/maenyl-4-card.jpg'
     },
     {
         category: 'business',
@@ -17,7 +17,7 @@ export const hotOffers: HotOffer[] = [
         price: 800,
         description: 'Logo principal + variantes • Palette & typographies • guide d’utilisation',
         duration: '4–5 semaines • 2 séries de révisions',
-        pic: ''
+        pic: '/visuels/maenyl-4-card.jpg'
     },
 ];
 
