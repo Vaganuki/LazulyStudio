@@ -1,4 +1,4 @@
-import './illustrationPricing.scss';
+import './illustration-pricing.scss';
 import '../pricing.scss';
 
 import {FAQ} from "../FAQ.tsx";
@@ -22,7 +22,7 @@ export function IllustrationPricing() {
                             <div  className="pricing-menu__content__header" style={{backgroundColor:`var(--${group.headerColor})`}}>
                                 <h4 className="pricing-menu__content__header__title">{group.title}</h4>
                             </div>
-                            <ul  className="pricing-menu__content__itemWrapper">
+                            <ul  className="pricing-menu__content__item-wrapper">
                                 {group.items.map(item => (
                                     <li className="pricing-menu__content__item" key={item.content}>
                                         <div className="pricing-menu__content__item__spacer">
@@ -36,7 +36,7 @@ export function IllustrationPricing() {
                         </div>
                     ))}
                 </div>
-                <div className="pricing-mainOffer__attention">ATTENTION : Les tarifs varient selon la complexité graphique.</div>
+                <div className="pricing-main-offer__attention">ATTENTION : Les tarifs varient selon la complexité graphique.</div>
             </section>
             <Launch/>
             <FAQ title="illustration" content={illustrationFAQ}/>

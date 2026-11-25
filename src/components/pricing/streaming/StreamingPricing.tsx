@@ -1,5 +1,5 @@
 import '../pricing.scss';
-import './streamingPricing.scss'
+import './streaming-pricing.scss'
 
 import {FAQ} from "../FAQ.tsx";
 import {Launch} from "../Launch.tsx";
@@ -19,10 +19,10 @@ export function StreamingPricing(){
                     </div>
                 </section>
 
-                <section  className="pricing-mainOffer">
-                    <h3  className="pricing-mainOffer__title">LES OFFRES</h3>
+                <section  className="pricing-main-offer">
+                    <h3  className="pricing-main-offer__title">LES OFFRES</h3>
                     <MainOffer data={streamingOffers}/>
-                    <div  className="pricing-mainOffer__attention">ATTENTION: Les tarifs varient selon la compléxité graphique, le nombre d'éléments sur mesure et le niveau d'animation.</div>
+                    <div  className="pricing-main-offer__attention">ATTENTION: Les tarifs varient selon la compléxité graphique, le nombre d'éléments sur mesure et le niveau d'animation.</div>
                 </section>
                 <section className="pricing-menu">
                     <div className="pricing-menu__header">
@@ -34,7 +34,7 @@ export function StreamingPricing(){
                                 <div  className="pricing-menu__content__header" style={{backgroundColor:`var(--${group.headerColor})`}}>
                                     <h4 className="pricing-menu__content__header__title">{group.title}</h4>
                                 </div>
-                                <ul  className="pricing-menu__content__itemWrapper">
+                                <ul  className="pricing-menu__content__item-wrapper">
                                     {group.items.map(item => (
                                         <li className="pricing-menu__content__item" key={item.content}>
                                             <span className="pricing-menu__content__item__desc">{item.content}</span>

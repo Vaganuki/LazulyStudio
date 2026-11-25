@@ -1,4 +1,4 @@
-import './hot_offers.scss';
+import './hot-offers.scss';
 import {hotOffers} from "../../../data/homepage.ts";
 
 export function HotOffers() {

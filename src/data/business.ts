@@ -1,5 +1,5 @@
 import type {PricingGroup} from "../@types/pricing";
-import type {MainOffer} from "../@types/mainOffer";
+import type {MainOffer} from "../@types/main-offer";
 import type {FAQ} from "../@types/faq";
 
 export const businessMenu: PricingGroup[] = [

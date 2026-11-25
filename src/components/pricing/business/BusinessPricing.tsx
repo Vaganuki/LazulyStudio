@@ -1,4 +1,4 @@
-import './businessPricing.scss'
+import './business-pricing.scss'
 import '../pricing.scss';
 import {FAQ} from "../FAQ.tsx";
 import {MainOffer} from "../MainOffer.tsx";
@@ -16,10 +16,10 @@ export function BusinessPricing() {
                     </div>
                 </section>
 
-                <section className="pricing-mainOffer">
-                    <h3 className="pricing-mainOffer__title">UNE OFFRE CLÉ EN MAIN</h3>
+                <section className="pricing-main-offer">
+                    <h3 className="pricing-main-offer__title">UNE OFFRE CLÉ EN MAIN</h3>
                     <MainOffer data={businessOffers}/>
-                    <div className="pricing-mainOffer__attention">ATTENTION: Les tarifs varient selon la compléxité graphique.</div>
+                    <div className="pricing-main-offer__attention">ATTENTION: Les tarifs varient selon la compléxité graphique.</div>
                 </section>
                 <section className="pricing-menu">
                     <div className="pricing-menu__header">
@@ -31,7 +31,7 @@ export function BusinessPricing() {
                                 <div  className="pricing-menu__content__header" style={{backgroundColor:`var(--${group.headerColor})`}}>
                                     <h4 className="pricing-menu__content__header__title">{group.title}</h4>
                                 </div>
-                                <ul  className="pricing-menu__content__itemWrapper">
+                                <ul  className="pricing-menu__content__item-wrapper">
                                     {group.items.map(item => (
                                         <li className="pricing-menu__content__item" key={item.content}>
                                             <span className="pricing-menu__content__item__desc">{item.content}</span>

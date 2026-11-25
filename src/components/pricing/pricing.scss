@@ -30,7 +30,7 @@
   }
 
 
-  &-mainOffer {
+  &-main-offer {
     padding: 1rem var(--section-padding-inline);
     background-color: var(--white);
 
@@ -168,7 +168,7 @@
     }
   }
 
-  &-FAQ{
+  &-faq{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -209,7 +209,7 @@
 
 @include media(md) {
   .pricing {
-    &-mainOffer {
+    &-main-offer {
       padding-block: 2rem;
 
       &__title {
@@ -254,7 +254,7 @@
       }
     }
 
-    &-FAQ{
+    &-faq{
       padding-block: 2rem;
 
       &__item {
@@ -304,7 +304,7 @@
 
 @include media(xl) {
   .pricing {
-    &-mainOffer {
+    &-main-offer {
       &__item {
         flex-basis: calc((100% - 3rem) / 4);
 
