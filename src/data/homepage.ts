@@ -17,7 +17,7 @@ export const hotOffers: HotOffer[] = [
         price: 800,
         description: 'Logo principal + variantes • Palette & typographies • guide d’utilisation',
         duration: '4–5 semaines • 2 séries de révisions',
-        pic: '/visuels/maenyl-4-card.jpg'
+        pic: '/visuels/Bergamotte/pochette.png'
     },
 ];
 
