@@ -1,6 +1,8 @@
 .illustration{
   /* TODO: placeholder, put the illustration visual here */
-  --pricing-hero-image: url('/visuels/maenyl-4-hero.jpg');
+  --pricing-hero-image: url('/visuels/Plume-avatar.png');
+  /* the owl's head sits in the upper third of the picture: keep it in the frame */
+  --pricing-hero-position: center 30%;
 
   .pricing{
     &-menu{
