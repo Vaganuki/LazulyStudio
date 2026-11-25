@@ -11,7 +11,7 @@ export function IllustrationPricing() {
         <>
             <section className="illustration">
                 <section className="pricing-hero">
-                    <h2 className="pricing-hero__title">TARFIS ILLUSTRATION</h2>
+                    <h2 className="pricing-hero__title">TARIFS ILLUSTRATION</h2>
                     <div className="pricing-hero__menu">
                         <button className="pricing-hero__menu__button">Voir les tarifs à l'unité</button>
                     </div>
